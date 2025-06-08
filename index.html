@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>BharatVerse Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000080" />
+  <title>BharatVerse</title>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- PWA Service Worker Register -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log("✅ Service Worker Registered", reg))
+        .catch(err => console.error("❌ Service Worker Failed", err));
+    }
+  </script>
+
+  <!-- Optional: CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    header {
+      background-color: #000080;
+      color: white;
+      padding: 1rem;
+    }
+    main {
+      margin: 2rem;
+    }
+    footer {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to BharatVerse!</h1>
-    <p>This is a test page from a ZIP file.</p>
-    <a href="test.php">Go to PHP test</a>
+  <header>
+    <h1>Welcome to BharatVerse 🇮🇳</h1>
+  </header>
+
+  <main>
+    <p>This is a simple Progressive Web App (PWA) version of BharatVerse.</p>
+    <p>Add to home screen to use it like an app!</p>
+  </main>
+
+  <footer>
+    &copy; 2025 BharatVerse. All rights reserved.
+  </footer>
 </body>
 </html>
